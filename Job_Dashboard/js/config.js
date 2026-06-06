@@ -1,7 +1,8 @@
 // Global System Configuration Matrix
 const CONFIG = {
-    // Paste your exact web app deployment URL below:
-    API_URL: 'https://script.google.com/macros/s/AKfycbzdzaGptKsef67xYKWELeMwRmtDRF-uRwQLkwWSTYqnOPfo127jdszE2c8EuXZAQirnZQ/exec',
+    // ANONYMIZED: Removed personal deployment web application macro string. 
+    // Paste your exact deployed Google Apps Script macro or pipeline endpoint URL below:
+    API_URL: 'https://script.google.com/macros/s/YOUR_DEPLOYED_MACRO_ID_HERE/exec',
     
     // Loose string matching keywords for tracking calculations
     INTERVIEW_KEYWORDS: ['interview', 'screen', 'assessment', 'technical', 'panel', 'l0', 'l1', 'l2'],
