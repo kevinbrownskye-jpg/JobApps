@@ -86,26 +86,19 @@
                         <div>
                             <label class="input-label">Target Roles</label>
                             <div class="list-container">
-                                <div id="roles-checkbox-list" class="scroll-list">
+                                <div id="roles-checkbox-list">
+                                    // Modify as needed, ensure to update the fallback checked states in `config.js loadParamState()` to match (`if (!savedState) {` on line 45)
                                     <label class="checkbox-row">
-                                        <input type="checkbox" id="role-pm" value="Localization Project Manager">
-                                        <span>Localization Project Manager</span>
+                                        <input type="checkbox" id="role-software-eng" value="Software Engineer" checked>
+                                        <span>Software Engineer</span>
                                     </label>
                                     <label class="checkbox-row">
-                                        <input type="checkbox" id="role-srpm" value="Senior Localization Project Manager">
-                                        <span>Senior Localization PM</span>
+                                        <input type="checkbox" id="role-data-analyst" value="Data Analyst">
+                                        <span>Data Analyst</span>
                                     </label>
                                     <label class="checkbox-row">
-                                        <input type="checkbox" id="role-prog" value="Localization Program Manager">
-                                        <span>Localization Program Manager</span>
-                                    </label>
-                                    <label class="checkbox-row">
-                                        <input type="checkbox" id="role-eng" value="Localization Engineer">
-                                        <span>Localization Engineer</span>
-                                    </label>
-                                    <label class="checkbox-row">
-                                        <input type="checkbox" id="role-spec" value="Localization Specialist">
-                                        <span>Localization Specialist</span>
+                                        <input type="checkbox" id="role-product-mgr" value="Product Manager">
+                                        <span>Product Manager</span>
                                     </label>
                                 </div>
                                 <div class="add-role-row">
@@ -131,6 +124,7 @@
                                 </div>
                                 <div class="input-group">
                                     <label for="search-focus" class="input-label">Niche Keywords</label>
+                                    // adapt as needed to your preferred fields
                                     <input type="text" id="search-focus" value="Gaming, Video Games, Mobile Apps, Tech, Localization" class="text-input">
                                 </div>
                             </div>
@@ -269,18 +263,18 @@
         <div id="content-make" class="tab-content-hidden space-y-6">
             <div class="card-panel" style="justify-content: flex-start; gap: 20px;">
                 <div>
-                    <h2 style="margin: 0; font-size: 16px; font-weight: 700;">Make.com Sync Configuration</h2>
-                    <p style="margin: 4px 0 0 0; font-size: 12px; color: #64748b;">Establish the secure webhook links to automatically handle background Drive reading and Sheet logging loops.</p>
+                    <h2 style="margin: 0; font-size: 16px; font-weight: 700;">Workflow Sync Configuration</h2>
+                    <p style="margin: 4px 0 0 0; font-size: 12px; color: #64748b;">Establish the secure webhook links to automatically handle background reading and logging loops.</p>
                 </div>
 
                 <div class="space-y-4" style="width: 100%;">
                     <div class="input-group">
-                        <label for="gdrive_webhook" class="input-label">GDrive Fetch Webhook URL (Scenario 2)</label>
-                        <input type="text" id="gdrive_webhook" placeholder="https://hook.us1.make.com/xxxxxxxxxxxx" class="text-input">
+                        <label for="gdrive_webhook" class="input-label">Drive Fetch Webhook URL (Scenario 2)</label>
+                        <input type="text" id="gdrive_webhook" placeholder="https://hook.your-automation-platform.com/your-id-here">          
                     </div>
                     <div class="input-group">
                         <label for="export_webhook" class="input-label">Spreadsheet Writer Webhook URL (Scenario 3)</label>
-                        <input type="text" id="export_webhook" placeholder="https://hook.us1.make.com/xxxxxxxxxxxx" class="text-input">
+                        <input type="text" id="export_webhook" placeholder="https://hook.your-automation-platform.com/your-id-here">
                     </div>
                     <button id="save-sync-routes-btn" class="btn-primary" style="width: auto; padding: 10px 24px; margin-top: 8px;">Save Sync Route</button>
                 </div>
