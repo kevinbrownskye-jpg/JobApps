@@ -15,11 +15,13 @@ export async function analyzeManualURL() {
     const chosenProfile = profileSelector.value;
 
     if (!activeKey) {
+        // ANONYMIZED: Reference custom parameters generic message
         window.showAlert('Configuration Error', 'Gemini API key missing inside config.json or storage parameters.', 'error');
         return;
     }
     if (!hookUrl) {
-        window.showAlert('Setup Missing', 'Please verify your Make fetch connection hook settings inside Tab 4.', 'error');
+        // ANONYMIZED: Generalizing connection route instruction text
+        window.showAlert('Setup Missing', 'Please verify your pipeline fetch connection hook settings inside Tab 4.', 'error');
         return;
     }
     if (!targetURL) {
@@ -57,6 +59,7 @@ ${baseCVText}
 ---
 
 CRITICAL CORE FOCUS MODALITY:
+// ANONYMIZED: General role comparison matching logic for public template users
 The candidate is optimizing specifically for a "${chosenProfile}" track framework assignment. Measure compatibility, skills gaps, and resources matching that domain lens precisely.
 
 CRITICAL STRUCTURAL OUTPUT INSTRUCTIONS:
@@ -152,8 +155,10 @@ export async function analyzeManualText() {
         return;
     }
     if (!hookUrl) {
-        window.showAlert('Setup Missing', 'Please verify your Make fetch connection hook settings inside Tab 4.', 'error');
+        // ANONYMIZED: Removing specific platform tags (like Make) to match a generic system architecture documentation style
+        window.showAlert('Setup Missing', 'Please verify your automated route connection hook settings inside Tab 4.', 'error');
         return;
+    }
     }
     if (!pastedDescription) {
         window.showAlert('Form Incomplete', 'Please paste the job description text block to run an analysis.', 'error');
