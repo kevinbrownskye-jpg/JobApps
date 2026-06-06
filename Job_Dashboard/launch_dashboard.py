@@ -98,9 +98,10 @@ def resolve_project_dir(cli_path: str | None) -> tuple[str, str]:
         os.path.join(d, f) for d, f in dict.fromkeys(candidates)
     )
     print(
-        f"\n[ERROR] Could not find dashboard.html.\n"
-        f"Searched:\n  {searched}\n\n"
-        "Place the HTML file next to this script, or pass --file <path>.\n"
+        # ANONYMIZED: Generalized template verification error messaging
+        f"\n[ERROR] Could not find the dashboard template html file.\n"
+        f"Expected path: {target_path}\n"
+        f"Please verify this file is located next to the main launcher file or inside the build path layout."
     )
     sys.exit(1)
 
@@ -205,7 +206,8 @@ def main() -> None:
 
     # Create the native desktop window pointed at the local server
     webview.create_window(
-        title="Pipeline Analytics Dashboard",
+        # ANONYMIZED: Updated specialized branding string to a generic template framework label
+        title="Application Tracking Metrics Dashboard",
         url=url,
         width=args.width,
         height=args.height,
