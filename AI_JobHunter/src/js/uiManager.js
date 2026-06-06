@@ -66,6 +66,7 @@ export function saveParamState() {
     const statePayload = {
         roles: rolesData,
         location: document.getElementById('search-location')?.value || '',
+        // ANONYMIZED: Standardizing template fallback defaults
         time: document.getElementById('search-time')?.value || 'the last 7 days',
         focus: document.getElementById('search-focus')?.value || ''
     };
@@ -91,7 +92,7 @@ export function renderJobCards(jobs) {
         return;
     }
 
-    jobs.forEach((job, index) => {
+jobs.forEach((job, index) => {
         const card = document.createElement('div');
         card.className = "job-card";
         
@@ -112,8 +113,9 @@ export function renderJobCards(jobs) {
             <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 8px;">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
                     <div>
+                        {/* ANONYMIZED: General template string labels instead of specialized platform naming filters */}
                         <h4 class="card-title">${job.job_title || 'Inferred Position'}</h4>
-                        <p class="card-subtitle">${job.company || 'Unknown Studio'} — <span style="color: #94a3b8;">${job.location || 'Manual Text Audit'}</span></p>
+                        <p class="card-subtitle">${job.company || 'Generic Company'} — <span style="color: #94a3b8;">${job.location || 'Manual Text Analysis'}</span></p>
                     </div>
                     <div class="card-score-badge" style="background-color: ${scoreColor};">${job.match_score || 0}% Match</div>
                 </div>
