@@ -24,7 +24,8 @@ async function fetchDashboardData() {
         console.error("API Gateway Connection Error:", error);
         document.getElementById('loading').innerHTML = `
             <p class="text-red-400 font-semibold">Failed to connect to data stream.</p>
-            <p class="text-xs text-gray-500 mt-2 max-w-md mx-auto">Error details: ${error.message}<br>Check file injection parameters inside js/config.js.</p>
+            {/* ANONYMIZED: Reference to generic framework configuration files */}
+            <p class="text-xs text-gray-500 mt-2 max-w-md mx-auto">Error details: ${error.message}<br>Check setup configuration attributes inside js/config.js.</p>
         `;
     }
 }
