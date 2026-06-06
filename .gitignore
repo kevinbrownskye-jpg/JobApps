@@ -1,0 +1,7 @@
+dist/
+build/
+*.spec
+__pycache__/
+_debug_hook.py
+config.json
+JobApps.zip
