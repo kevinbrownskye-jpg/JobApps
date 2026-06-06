@@ -58,8 +58,9 @@ function filterAndRenderDataView() {
         const matchesStat = (selectedStat === 'ALL' || status === selectedStat);
         const matchesSrc = (selectedSrc === 'ALL' || source === selectedSrc);
         
-        const matchesSearch = (row["Job Title"] || '').toLowerCase().includes(searchQuery) || 
-                              (row["Company"] || '').toLowerCase().includes(searchQuery) || 
+        // ANONYMIZED: Fallback verification strings aligned cleanly to template values
+        const matchesSearch = (row["Job Title"] || 'unspecified position').toLowerCase().includes(searchQuery) || 
+                              (row["Company"] || 'generic company').toLowerCase().includes(searchQuery) || 
                               (row["Notes"] || '').toLowerCase().includes(searchQuery);
 
         return matchesCat && matchesStat && matchesSrc && matchesSearch;
@@ -85,10 +86,11 @@ function filterAndRenderDataView() {
 
     document.getElementById('view-records-count').innerText = filtered.length;
 
-    filtered.forEach(row => {
+filtered.forEach(row => {
         const status = (row["Status"] || "Applied").trim();
-        const jobTitle = row["Job Title"] || '';
-        const company = row["Company"] || '';
+        // ANONYMIZED: Replaced completely blank text strings with recognizable template fallbacks
+        const jobTitle = row["Job Title"] || 'Unspecified Position';
+        const company = row["Company"] || 'Generic Company';
         const category = (row["Category"] || 'General').trim();
         const source = (row["Posting source"] || '—').trim();
         const channel = (row["Applied Through"] || '—').trim();
