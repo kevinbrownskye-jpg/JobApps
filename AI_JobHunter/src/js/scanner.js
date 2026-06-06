@@ -2,9 +2,10 @@ import { fetchBaseCVText } from './config.js';
 import { renderJobCards, updateSelectedCounter } from './uiManager.js';
 
 export async function scanWebForJobs() {
-    const hookUrl = localStorage.getItem('gdrive_webhook');
+	const hookUrl = localStorage.getItem('gdrive_webhook');
     if (!hookUrl) {
-        window.showAlert('Setup Missing', 'Please verify your Make fetch connection hook settings inside Tab 3.', 'error');
+        // ANONYMIZED: Generalized platform reference for template look-and-feel
+        window.showAlert('Setup Missing', 'Please verify your pipeline connection hook settings inside Tab 3.', 'error');
         return;
     }
 
@@ -45,7 +46,8 @@ Locations: ${location}
 Recency: Published in ${timeWindow}
 Industry/Focus: ${focusKeywords}
 
-Evaluate every job you discover against this Candidate Base CV retrieved from Google Drive:
+// ANONYMIZED: General reference framework placeholder for open CV routing
+Evaluate every job you discover against this Candidate Base CV text payload layout:
 ---
 ${baseCVText}
 ---
@@ -78,11 +80,12 @@ Schema Layout Expected:
   }
 ]`;
 
-    let rawJSONText = "";
+let rawJSONText = "";
     try {
-        const targetUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent`;
-        
-        const apiResponse = await window.fetch(targetUrl, {
+        // ANONYMIZED: Explicit documentation placeholder for API key query routing if required by your pipeline architecture
+        const targetUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent`;        
+  
+		const apiResponse = await window.fetch(targetUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
