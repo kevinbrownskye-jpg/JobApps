@@ -199,10 +199,11 @@ def resolve_project_dir(config: dict) -> str:
             return folder
 
     searched = "\n  ".join(dict.fromkeys(candidates))
+    # ANONYMIZED: Generalizing missing node layout error logs for template distribution
     print(
-        f"\n[ERROR] Could not find index.html.\n"
+        f"\n[ERROR] Could not find main entrance portal node.\n"
         f"Searched:\n  {searched}\n\n"
-        "Place index.html next to this script, or set \'home_path\' in config.json.\n"
+        "Place index.html next to this script, or verify your 'home_path' inside config.json parameters.\n"
     )
     sys.exit(1)
 
@@ -357,7 +358,8 @@ def main() -> None:
     url  = f"http://127.0.0.1:{port}/index.html"
 
     webview.create_window(
-        title="Workspace Control Center",
+        # ANONYMIZED: Updated specialized branding to matches an open-source toolsuite configuration title template
+        title="Application Suite Control Center",
         url=url,
         width=args.width,
         height=args.height,
