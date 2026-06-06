@@ -8,6 +8,8 @@ export async function exportSelectedJobs(selectedJobsArray) {
         return;
     }
 
+    // ANONYMIZED: Webhooks are dynamically loaded from LocalStorage configurations.
+    // Ensure you have saved your Make.com (Pipeline 03) or automation hook URL in the settings UI.
     const targetWebhookUrl = localStorage.getItem('tracker_webhook') || localStorage.getItem('gdrive_webhook');
     if (!targetWebhookUrl) {
         window.showAlert('Configuration Missing', 'No export target webhook found inside Tab 3 settings.', 'error');
@@ -15,8 +17,7 @@ export async function exportSelectedJobs(selectedJobsArray) {
     }
 
     try {
-        // 1. Dispatch data payload to your Make.com pipeline (Pipeline 03)
-        const apiResponse = await window.fetch(targetWebhookUrl, {
+    // 1. ANONYMIZED: Dispatch data payload to your custom workflow automation tool (e.g., Make.com, Zapier, n8n)        const apiResponse = await window.fetch(targetWebhookUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ jobs: selectedJobsArray })
