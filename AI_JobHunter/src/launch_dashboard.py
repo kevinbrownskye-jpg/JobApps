@@ -2,7 +2,7 @@
 """
 AI Job Hunter Dashboard — Standalone Launcher
 =============================================
-Runs ai_job_hunter_dashboard.html as a native desktop window.
+Runs index.html as a native desktop window.
 Reads API keys and webhook URLs from config.json (next to the .exe).
 
 Requirements (install once):
@@ -10,7 +10,7 @@ Requirements (install once):
 
 Usage:
     python launch_dashboard.py
-    python launch_dashboard.py --file /path/to/ai_job_hunter_dashboard.html
+    python launch_dashboard.py --file /path/to/index.html
     python launch_dashboard.py --width 1400 --height 900
 """
 
@@ -92,6 +92,7 @@ class LoggerAPI:
 
             with open(log_path, "w", encoding="utf-8") as fh:
                 fh.write("=" * 60 + "\n")
+                # ANONYMIZED: Agnostic log heading definition
                 fh.write("AI JOB HUNTER — PIPELINE EXCEPTION LOG\n")
                 fh.write("=" * 60 + "\n")
                 fh.write(f"Timestamp      : {datetime.datetime.now().isoformat()}\n")
@@ -312,7 +313,7 @@ def resolve_html_path(cli_path, config: dict) -> str:
 
     searched = "\n  ".join(dict.fromkeys(candidates))
     print(
-        f"\n[ERROR] Could not find ai_job_hunter_dashboard.html.\n"
+        f"\n[ERROR] Could not find index.html.\n"
         f"Searched:\n  {searched}\n\n"
         "Place index.html next to this script in src/, pass --file <path>,\n"
         "or set 'html_path' in config.json.\n"
@@ -329,7 +330,7 @@ def main() -> None:
         description="Launch the AI Job Hunter dashboard as a desktop app."
     )
     parser.add_argument("--file", "-f", metavar="PATH",
-        help="Path to ai_job_hunter_dashboard.html")
+        help="Path to index.html")
     parser.add_argument("--width",  "-W", type=int, default=1280)
     parser.add_argument("--height", "-H", type=int, default=800)
     parser.add_argument("--no-resizable", action="store_true")
@@ -349,6 +350,7 @@ def main() -> None:
     url       = start_server(html_path, config_js)
 
     window = webview.create_window(
+        # ANONYMIZED: Generic UI application window title text string
         title="AI Job Hunter Dashboard",
         url=url,
         width=args.width,
