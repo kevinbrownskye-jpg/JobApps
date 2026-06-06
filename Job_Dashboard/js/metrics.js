@@ -1,3 +1,5 @@
+// ANONYMIZED & DOCUMENTED: Visual breakdown orchestration engine. 
+// Accepts dynamically filtered runtime records passed down from the centralized API configuration layer.
 function renderCharts(statusCounts, channelCounts, roleCounts) {
     // Destroy existing canvas contexts to avoid ghosting memory allocation bugs
     if(AppState.charts.status) AppState.charts.status.destroy();
