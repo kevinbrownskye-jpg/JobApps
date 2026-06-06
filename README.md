@@ -26,6 +26,7 @@ Ensure you have Python 3.10+ installed along with standard project dependencies:
 
 Bash
 pip install pywebview pyinstaller
+
 2. Runtime Configuration
 Create a config.json file in the root folder (and matching subsystem subdirectories if executing separately) to hold your local configuration parameters safely:
 
@@ -34,6 +35,7 @@ JSON
   "gemini_api_key": "YOUR_ACTUAL_GEMINI_API_KEY",
   "home_path": ""
 }
+
 3. Launching Applications Natively
 To boot the full suite workspace through the main integrated standalone entry frame, run:
 
@@ -44,6 +46,7 @@ To run components as separate processes, you can launch their designated platfor
 Bash
 python AI_JobHunter/src/launch_dashboard.py
 python Job_Dashboard/launch_dashboard.py
+
 4. Compiling Zero-Dependency Executables (.exe)
 To package any panel layout into a lightweight, standalone binary file that operates without requiring a local Python interpreter environment, invoke PyInstaller using the customized bundling scripts:
 
