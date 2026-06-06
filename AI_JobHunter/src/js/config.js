@@ -16,9 +16,11 @@ export async function getApiKeyFromConfig() {
 }
 
 export function loadParamState() {
+    // ANONYMIZED: Fallback values set to empty strings or descriptive instructions.
+    // If you prefer to hardcode default endpoints for a generic template, use placeholder URLs.
     const cachedKey = localStorage.getItem('gemini_api_key') || '';
-    const cachedGDrive = localStorage.getItem('gdrive_webhook') || '';
-    const cachedExport = localStorage.getItem('export_webhook') || '';
+    const cachedGDrive = localStorage.getItem('gdrive_webhook') || ''; // e.g., 'https://hook.us1.make.com/your-gdrive-webhook-id'
+    const cachedExport = localStorage.getItem('export_webhook') || ''; // e.g., 'https://hook.us1.make.com/your-export-webhook-id'
     
     currentApiKey = cachedKey;
 
@@ -43,6 +45,7 @@ export function loadParamState() {
     let savedState = localStorage.getItem('job_hunter_param_state') || localStorage.getItem('global_shared_hunter_param_state');
     
     if (!savedState) {
+        // ANONYMIZED/GENERALIZED: Set generic default checkbox states for template users
         document.getElementById('role-pm').checked = false;
         document.getElementById('role-srpm').checked = true;
         document.getElementById('role-prog').checked = true;
